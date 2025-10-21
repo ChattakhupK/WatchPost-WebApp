@@ -3,6 +3,9 @@ import useDutyStore from "../../store/useDutyStore";
 
 const LocationList = () => {
   const locations = useDutyStore((state) => state.locations);
+
+  console.log(locations);
+
   return (
     <div className="w-80 bg-white border-l shadow-md border-gray-200">
       <div className="p-5 border-b border-gray-200 bg-blue-100">

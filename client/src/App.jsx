@@ -4,6 +4,7 @@ import LocationList from "./components/locations/LocationList";
 import MapView from "./components/map/MapView";
 import PersonelList from "./components/people/PersonelList";
 import useDutyStore from "./store/useDutyStore";
+import AddLocationModal from "./components/locations/AddLocationModal";
 
 function App() {
   const fetchAll = useDutyStore((state) => state.fetchAll);
@@ -27,6 +28,14 @@ function App() {
           <LocationList />
         </div>
       </div>
+      {pending && (
+        <AddLocationModal
+          lat={pending.lat}
+          lng={pending.lng}
+          setAdding={setAdding}
+          setPending={setPending}
+        />
+      )}
     </div>
   );
 }
